@@ -11,7 +11,7 @@ type Item struct {
 	Body  string
 }
 
-func main() {
+func main1() {
 	var reply Item
 	var db []Item
 

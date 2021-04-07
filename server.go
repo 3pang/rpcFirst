@@ -70,7 +70,7 @@ func (a *API) DeleteItem(item Item, reply *Item) error {
 	return nil
 }
 
-func main() {
+func main1() {
 	api := new(API)
 	err := rpc.Register(api)
 	if err != nil {
