@@ -27,7 +27,7 @@ func init() {
 	//log.SetFormatter(&log.JSONFormatter{})
 }
 
-func main() {
+func mainlog() {
 	for {
 		log.Info("hello, world!")
 		time.Sleep(time.Duration(2) * time.Second)

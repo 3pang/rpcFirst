@@ -1,0 +1,35 @@
+package main
+
+import (
+	yaml "gopkg.in/yaml.v2"
+	"io/ioutil"
+	"log"
+	"rpcFirst/module"
+)
+
+func main() {
+	// resultMap := make(map[string]interface{})
+	conf := new(module.Yaml)
+	yamlFile, err := ioutil.ReadFile("./config/test.yaml")
+
+	// conf := new(module.Yaml1)
+	// yamlFile, err := ioutil.ReadFile("test.yaml")
+
+	// conf := new(module.Yaml2)
+	//  yamlFile, err := ioutil.ReadFile("test1.yaml")
+
+	log.Println("yamlFile:", yamlFile)
+	if err != nil {
+		log.Printf("yamlFile.Get err #%v ", err)
+	}
+	err = yaml.Unmarshal(yamlFile, conf)
+	// err = yaml.Unmarshal(yamlFile, &resultMap)
+	if err != nil {
+		log.Fatalf("Unmarshal: %v", err)
+	}
+	log.Println("conf", conf.Mysql.Name)
+	log.Println("conf", conf.Mysql.Host)
+	log.Println("conf", conf.Cache.Enable)
+
+	// log.Println("conf", resultMap)
+}
