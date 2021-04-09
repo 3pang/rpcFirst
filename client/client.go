@@ -11,7 +11,7 @@ type Item struct {
 	Body  string
 }
 
-func main1() {
+func main2() {
 	var reply Item
 	var db []Item
 
@@ -37,8 +37,9 @@ func main1() {
 	client.Call("API.DeleteItem", c, &reply)
 	client.Call("API.GetDB", "", &db)
 	fmt.Println("Database: ", db)
+	fmt.Println("*****************************")
+	client.Call("api2.GetByName", "First", &reply)
 
-	client.Call("API.GetByName", "First", &reply)
 	fmt.Println("first item: ", reply)
 
 }
